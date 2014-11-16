@@ -35,4 +35,25 @@ public class APIMix {
 		}
 	}
 
+	public static void squareMatrixMultiply(int[][] first, int[][] second) {
+		final int size = 4;
+		first = new int[size][size];
+		second = new int[size][size];
+		int[][] result = new int[size][size];
+
+		// scan lines of first matrix
+		for (int i = 0; i < size; i++) {
+			// scan lines of second matrix
+			for (int j = 0; j < size; j++) {
+				// scan columns of second matrix
+				for (int k = 0; k < size; k++) {
+					// multiply all the elements in first matrix line
+					// with the correspondent element in second matrix column
+					// In first matrix keep the line fixed
+					// while in the second matrix keep the column fixed
+					result[i][j] += first[i][k] * second[k][j];
+				}
+			}
+		}
+	}
 }
